@@ -37,14 +37,16 @@ def Dchoix(sens):
         print("---Traduction de fichier texte en morse---")
     elif sens == 'mvt' :
         print("---Traduction de fichier morse en texte---")
+    elif sens == '3' :
+        print("-----------Traduction en direct-----------")
     time.sleep(0.1)
     print("\n")
 
-def Dfin_trad():
+def Dfin_trad(nom_fichier):
     i = 0
     while i < 3 :
         time.sleep(0.3)
         print('.')
         i += 1
 
-    print('Le fichier a été traduit et un nouveau fichier a été créé.\n')
+    print('Le fichier a été traduit et un nouveau fichier {} a été créé.\n'.format(nom_fichier+'-TRADUIT.txt'))

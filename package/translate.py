@@ -1,13 +1,15 @@
-def trad(contenu, dico):
+def trad(contenu, dico, sens):
     probleme = ['\n',' ', ',', ';']
     l_traduction = []
 
-    contenu = contenu.upper()
-    contenu.upper()
-    for lettre in contenu :
-        if lettre not in probleme :
-            l_traduction.append(dico[lettre])
-        if lettre == '\n':
+    if sens == 'tvm' :
+        contenu = contenu.upper()
+    if sens == 'mvt':
+        contenu = contenu.split(" ")
+    for elt in contenu :
+        if elt not in probleme :
+            l_traduction.append(dico[elt])
+        if elt == '\n':
             l_traduction.append('\n')
     traduction = " ".join(l_traduction)
 

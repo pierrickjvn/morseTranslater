@@ -2,7 +2,7 @@
 
 import os
 
-from package.createD import *
+from package.datafiles import *
 from package.translate import *
 from package.display import *
 
@@ -14,18 +14,7 @@ if choix == 1 :
 
     Dchoix(sens)
 
-    again = True
-    while again == True :
-        nom_fichier = str(input('Quel est le nom du fichier ? '))
-        try :
-            fichier = open(nom_fichier + '.txt', 'r')
-        except FileNotFoundError:
-            print("Le nom du fichier est invalide, veuillez vérifier que le fichier est dans le même dossier que le programme et que vous n'avez pas entré l'extension.")
-        else :
-            again = False
-
-    contenu = fichier.read()
-    fichier.close()
+    contenu, nom_fichier = getData()
 
     dico = create_dico('ressources/morse.txt', sens)
     traduction = trad(contenu, dico)
@@ -40,18 +29,7 @@ elif choix == 2 :
 
     Dchoix(sens)
 
-    again = True
-    while again == True :
-        nom_fichier = str(input('Quel est le nom du fichier ? '))
-        try :
-            fichier = open(nom_fichier + '.txt', 'r')
-        except FileNotFoundError:
-            print("Le nom du fichier est invalide, veuillez vérifier que le fichier est dans le même dossier que le programme et que vous n'avez pas entré l'extension.")
-        else :
-            again = False
-
-    contenu = fichier.read()
-    fichier.close()
+    contenu, nom_fichier = getData()
 
     dico = create_dico('ressources/morse.txt', sens)
     traduction = trad(contenu, dico)
